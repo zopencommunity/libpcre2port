@@ -1,6 +1,6 @@
 export ZOPEN_GIT_URL="https://github.com/PhilipHazel/pcre2.git"
 export ZOPEN_TARBALL_URL="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.42/pcre2-10.42.tar.gz"
-export ZOPEN_TARBALL_DEPS="make coreutils diffutils zoslib"
+export ZOPEN_TARBALL_DEPS="make coreutils diffutils grep zoslib"
 export ZOPEN_TYPE="TARBALL"
 
 zopen_check_results()
@@ -9,10 +9,12 @@ zopen_check_results()
   pfx="$2"
   chk="$1/$2_check.log"
 
-  # Echo the following information to gauge build health
-  echo "actualFailures:0"
-  echo "totalTests:1"
-  echo "expectedFailures:0"
+  totalTests=$(grep '# TOTAL:' $chk | awk '{ print $3 }')
+  actualFailures=$(grep '# FAIL:' $chk | awk '{ print $3 }')
+  expectedFailures=1
+  echo "actualFailures:${actualFailures}"
+  echo "totalTests:${totalTests}"
+  echo "expectedFailures:${expectedFailures}"
 }
 
 zopen_append_to_env()
@@ -34,7 +36,5 @@ zopen_append_to_setup()
 
 zopen_get_version()
 {
-  # Modify to echo the version of your tool/library
-  # Rather than hardcoding the version, obtain the version by running the tool/library
-  echo "1.0.0"
+  grep "PACKAGE_VERSION" src/config.h.generic | awk -F"\"" '{print $2}'
 }
