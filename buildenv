@@ -1,7 +1,10 @@
-export ZOPEN_GIT_URL="https://github.com/PhilipHazel/pcre2.git"
-export ZOPEN_TARBALL_URL="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.42/pcre2-10.42.tar.gz"
-export ZOPEN_TARBALL_DEPS="make coreutils diffutils grep zoslib"
-export ZOPEN_TYPE="TARBALL"
+# bump: libpcre2-version /PCRE2_VERSION="(.*)"/ gitrefs:https://github.com/PhilipHazel/pcre2.git|re:/pcre2-([\d.]+)/$1/|semver:*
+PCRE2_VERSION="10.42"
+
+export ZOPEN_BUILD_LINE="STABLE"
+export ZOPEN_DEV_URL="https://github.com/PhilipHazel/pcre2.git"
+export ZOPEN_STABLE_URL="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-${PCRE2_VERSION}/pcre2-${PCRE2_VERSION}.tar.gz"
+export ZOPEN_STABLE_DEPS="make coreutils diffutils grep zoslib"
 
 zopen_check_results()
 {
