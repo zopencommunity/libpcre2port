@@ -1,5 +1,5 @@
 # bump: libpcre2-version /PCRE2_VERSION="(.*)"/ gitrefs:https://github.com/PhilipHazel/pcre2.git|re:/pcre2-([\d.]+)/$1/|semver:*
-PCRE2_VERSION="10.42"
+PCRE2_VERSION="10.43"
 
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_DEV_URL="https://github.com/PhilipHazel/pcre2.git"
