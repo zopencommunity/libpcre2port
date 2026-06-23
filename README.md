@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/zopencommunity/libpcre2port/actions/workflows/codeql.yml/badge.svg)](https://github.com/zopencommunity/libpcre2port/actions/workflows/codeql.yml)
+
 [![Automatic version updates](https://github.com/ZOSOpenTools/libpcre2port/actions/workflows/bump.yml/badge.svg)](https://github.com/ZOSOpenTools/libpcre2port/actions/workflows/bump.yml)
 
 # Libpcre2
