@@ -1,4 +1,4 @@
-# bump: libpcre2-version /PCRE2_VERSION="(.*)"/ gitrefs:https://github.com/PhilipHazel/pcre2.git|re:/pcre2-([\d.]+)/$1/|semver:*
+# bump: libpcre2-version /PCRE2_VERSION="(.*)"/ git:https://github.com/PCRE2Project/pcre2.git|re:/(\d[\d.]+)$/$1/|semver:*
 PCRE2_VERSION="10.47"
 
 export ZOPEN_BUILD_LINE="STABLE"
@@ -25,7 +25,7 @@ zopen_append_to_env()
 {
 cat <<ZZ
 if [ ! -z "\$ZOPEN_IN_ZOPEN_BUILD" ]; then
-  export ZOPEN_EXTRA_CFLAGS="\${ZOPEN_EXTRA_CFLAGS} -mzos-target=zosv2r5 -march=z13 -I\$PWD/include"
+  export ZOPEN_EXTRA_CFLAGS="\${ZOPEN_EXTRA_CFLAGS} -I\$PWD/include"
   export ZOPEN_SYSTEM_PREREQS="zos25"
   export ZOPEN_EXTRA_CXXFLAGS="\${ZOPEN_EXTRA_CXXFLAGS} -I\$PWD/include"
   export ZOPEN_EXTRA_LDFLAGS="\${ZOPEN_EXTRA_LDFLAGS} -L\$PWD/lib"
