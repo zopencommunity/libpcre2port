@@ -6,6 +6,7 @@ export ZOPEN_CATEGORIES="library"
 export ZOPEN_DEV_URL="https://github.com/PhilipHazel/pcre2.git"
 export ZOPEN_STABLE_URL="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-${PCRE2_VERSION}/pcre2-${PCRE2_VERSION}.tar.bz2"
 export ZOPEN_STABLE_DEPS="make coreutils diffutils grep zoslib"
+export ZOPEN_NAME="libpcre2-${PCRE2_VERSION}"
 
 zopen_check_results()
 {
